@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kasio</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+    <!-- main style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+
+            <div class="preloader" aria-busy="true" aria-label="Cargando, por favor espere." role="progressbar">
+            </div>
+
+        </div>
+    </div>
+    <!-- ./Preloader -->
+    
+    <!-- header -->
+    <header class="navbar-fixed-top">
+        <nav>
+            <ul>
+                <li><a href="index.html#about">Acerca de mi</a></li>
+                <li><a href="index.html#experience">Experiencia</a></li>
+                <li><a href="index.html#education">Educaci&oacute;n</a></li>
+                <li><a href="index.html#skills">Habilidades</a></li>
+				<li><a href="index.html#projects">Proyectos</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ./header -->
+    
+    <!-- projects-detail -->
+
+    <div class="section" id="projects-detail">
+        <div class="container">
+            <div class="col-md-12" data-aos="fade-up">
+                <h1 class="size-50">Proyecto <br /> AF7 Tic Box</h1>
+                <div class="h-50"></div>
+				
+			<p>Este proyecto lo realicé para la asociación Arousa Fútbol 7 de la cual yo soy miembro, de hecho os hablo más en detalle en el proyecto que tengo dedicado a este evento. Debido a que las necesidades tecnológicas que el evento nos requería dependian de las instalaciones de las que disponíamos y que únicamente se utilizaban unas 3 semanas al año pensé en realizar un equipo que, además de ser transportable fácilmente, no nos diera muchos quebraderos de cabeza para su montaje y puesta en marcha. Así nació la AF7 Tic Box.</p>
+			
+			<p>La AF7 Tic Box es una caja formato <a href="https://www.google.com/search?biw=2560&bih=888&sxsrf=ALeKk02vmYGCanbIRiNd8STiF31vLAWxrQ%3A1596104385200&ei=wZ4iX4riC47FUre4gNAC&q=que+es+un+flightcase&oq=que+es+un+flightcase&gs_lcp=CgZwc3ktYWIQAzIGCAAQDRAeOgQIIxAnOggILhCxAxCDAToICAAQsQMQgwE6AggAOgUILhCxAzoFCAAQsQM6BggAEBYQHjoICAAQFhAKEB5Q86QDWIu-A2CpxgNoAHAAeACAAfQBiAG1EZIBBjExLjcuMpgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwjKxp2X4PTqAhWOohQKHTccACoQ4dUDCAw&uact=5" target=_blank>FlightCase</a> de un tamaño de 5Us, en la que tenemos toda nuestra infraestructura hardware y software para poner en funcionamiento la parte tecnológica del torneo.</p>
+			
+			<p align="center"><img src="img/af7-tic-box-front.jpg" width="600" height="335">
+			
+			<br>Primera versión de la AF7 Tic Box</p>
+			
+			<p>La caja contiene los siguiente elementos:</p>
+			
+			<p>
+				<ul>
+					<li>Switch DLink DGS-1210 de 16 puertos Ethernet + 4 puertos SFP</li>
+					<li>SFP Cisco fibra multimodo</li>
+					<li>SFP Dlink ethernet GETH</li>
+					<li>Router Cisco 1801-M</li>
+					<li>Antena LTE Teldat 4Ge</li>
+					<li>2 puntos de acceso Aruba AP-207</li>
+					<li>Ordenador Gigabyte BRIX GB-BSI3H-6100</li>
+					<li>Regleta de alimentación de 8 Schukos</li>
+					<li>Dos inyectores POE TP-Link TL-POE150S</li>
+				</ul>
+			</p>
+			
+			<p>Con esta infrestructura hardware, más todo el software instalado, lo único que necesitamos es llevar la caja, darle alimentación eléctrica y ya tenemos todos los servicios en funcionamiento.</p>
+			
+			<p>Continuando con el apartado hardware vamos a destacar las funcionalidades de cada equipo:</p>
+			
+			<p>El router <b>Cisco 1801-M</b> es un router avanzado en el cual tenemos configurados varios aspectos. El primero es una vlan que conecta con la antena 4G y le envia los parámetros AT para realizar la conexión LTE (4G), una vez realizada la conexión se crea un interfaz virtual en modo acceso el cual recibe la IP pública enviada por el proveedor de servicios (destacar que los equipos no son de ningun operador por lo que funcionan con cualquier tarjeta SIM). En el momento que el interfaz virtual levanta IP un servicio RIP comprueba si hay conectividad hacia una ip (8.8.8.8) y reliza un ruteo hacia los puertos LAN que se encuentran en otra vlan. Así mismo el router dispone de un puerto WAN al que se puede conectar una conexión por cable existente en donde se haya instalado la caja, si este puesto está levantado el router dispone de otro servicio wan failover que analiza que conexión de las dos es más estable y balancea la carga principal de la LAN hacia el mejor acceso.</p>
+			
+			<p>El switch <b>D-Link DGS-1210</b> es un switch gestionable en el que hemos creado 4 vlanes física que se encuentran diferenciadas en los puertos. La primera Vlan es la que da acceso a la red local donde se encuentran todos los equipos de trabajo, servidores y clientes. La segunda Vlan es para la gestión del ancho de banda de la Wifi de invitados. La tercera gestiona también el ancho de banda de la Wifi para el personal de prensa. Y la cuarta vlan es un puente entre los dos SFP para que, en caso de que dispongamos de una acceso de fibra en el lugar, el switch funcione a mode conversor de medios y convierta el acceso de fibra a una conexion ethernet.</p>
+			
+			<p>Los puntos de acceso <b>Aruba Ap-207</b> son los que nos sirven para dar conectividad inalámbrica. Se ha creado un Aruba Contoller para gestionar la configuración de ambos aps. En el controlador tenemos configuradas tres ssid distintas, la WiFi interna, la WiFi de invitados o público y la WiFi de prensa. Cada red tiene su direccionamiento distinto para evitar posibles ataques internos. Uno de los aps tiene que ir conectado al switch pero el segundo ap tiene configurado en el controlador el modo IAP Mesh por lo que simplemente alimentandolo recibirá la misma configuración del controlador a través del primer ap y aumentará la cobertura de la señal inalámbrica desde donde se haya colocado.</p>
+			
+			<p>El ordenador <b>Gigabyte Brix</b> tiene instaldo un sistema VMWare vSphere con ESXi 6.7. El equipo tiene instalada una segunda tarjeta de red y  mediante NSX se ha generado una red virtual que solo le da acceso a la red de esa tarjeta a una de las maquinas virtuales. Dentro de este hypervisor tenemos varias maquinas con distintas funcionalidades.
+				<ul>La primera y más importante es una máquina con un sistema <b>Sophos XG Firewall</b>, esta maquina es la que hace uso de las dos tarjetas de red, la primera está conectada al switch Dlink de forma habitual. Tiene creada dos interfaces virtuales, la primera para hacer de acceso WAN del router CISCO, y la segunda para proveer de acceso a la LAN. La otra tarjeta de red esta conectada al SFP del switch y funciona como segundo acceso WAN. En cuanto a las funciones de este firewall tenemos, load balancer y failover entre la conexión facilitada por el router Cisco y el acceso de fibra, portal cautivo para las conexiones WiFi, bloqueo de contenido inapropiado (spam, pornografía, sitios de venta, casas de apuestas...), limitación de ancho de banda para vlanes WiFi, monitorización de uso de la red por equipos, usuarios o protocolo, limitación de uso de sitios web de streaming, etc.</ul>
+				<ul>La segunda máquina es un <b>Windows Server</b> que su función principal es la de ejercer de controlador de dominio. En esta máquina se crean los usuarios del active directory, gestiona perfiles móviles para clientes Windows (así al iniciar sesión desde un pc Windows dispondremos de las herramientas y accesos directos a estas sin necesidad de instalar ningun software), gestiona también un almacenamiento NAS con permisos NTFS; y también hace las funciones de servidor DHCP y servidor DNS de todos los servicios que se encuentran en la LAN.</ul>
+				<ul>La tercera es el servidor principal, una máquina con <b>Debian</b> que dispone de todos los servicios y herramientas principales. El primero es un entorno <i>Dockers</i> con un cluster de un solo nodo, pensado esto para poder ampliar con otra máquina en caso de que el rendimiento bajara. El segundo servicio es un <i>servidor Apache2</i> que aloja la web de la intranet a partir de la cual se accede a todas las herramientas. El tercer servicio es un <i>servidor de aplicaciones TomCat</i> necesario para algunas herramientas. El cuarto servicio es un gestor de backups con <i>Bacula</i> que puede realizar copia de seguridad de todas las configuraciones, perfiles moviles, bases de datos y directorios indicados en la nube. A mayores este servidor dispone de las siguientes herramientas:
+					<ul>- <i>OTRS</i> como herramienta de ticketing para tener un registro de incidencias o mejoras a realizar.</ul>
+					<ul>- <i>GLPI</i> como herramienta ITSM con todo el inventariado hardware y software, así como con las configuraciones de todos los servicios.</ul>
+					<ul>- <i>Redmine</i> como herramienta de gestión de proyectos para mantener toda la documentación de uso de las herramientas y gestión de los entornos de desarollo propios.</ul>
+					<ul>- <i>Zabbix</i> como herramienta de monitorización de los servidores.</ul>
+					<ul>- <i>Odoo</i> como herramienta ERP y CRM para la venta de merchandasing y entradas, tesorería, gestión de personal...</ul>
+					<ul>- <i>AF7Signage</i> como herramienta de paneles informativos. Esta es una aplicación de creación propia programada en Python que muestra los resultados de los partidos y las clasificaciones en tiempo real. Se conecta al webservice de nuestra página web y recoge toda la información para mostrarla en una página web que es visualida en dos televisores dispuestos en localizaciones distintas del lugar.</ul>
+					<ul>- <i>MPLedManager</i> como herramienta de marcadores. Esta es una apliación de creación propia programada en Ruby que se encarga de enviar mediante puerto serie la información necesaria a los dos marcadores led, se ejecuta cada vez que hay una modificacion en el webservice de nuestra página web y genera efectos como iconos de un balón cuando hay un gol, parpadeo del digito que indica los goles durante los 30 segundos siguientes a haberse marcado, etc.</ul>
+				</ul>
+				<ul>La cuarta máquina instalada es un <b>Debian</b> que funciona como servidor de bases de datos que dispone de tres motores distintos; MariaDB y PostgreSQL como bases de datos relacionales y MongoDB como base de datos no relacional.</ul>
+				<ul>La quinta máquina instalada es un <b>Centos</b> que tiene instalado el servidor de <i>FreePBX</i> como herramienta VoIP que utilizamos con unos terminales Yealink y aplicaciones SIP Phone en los teléfonos moviles para poder realizar comunicaciones internas entre el personal. Este Asterisk hace un SIP Trunk a traves de internet contra un ATA que tenemos en la oficina de la asociación por lo que también podemos hacer llamadas externas a través del teléfono fijo.</ul>
+			</p>
+			
+			<p>A mayores de esto disponemos de una Web App para que el personal que visialuza los partidos pueda registrar todos los eventos que se producen, esta app se conecta al webservice de la web y provoca que, por ejemplo, cuando un equipo meta un gol, todo lo que depende de ahí se actualiza inmediatamente (marcadores, paneles informativos, web, redes sociales, clasificaciones...). Todos los servidores (incluido el Windows Server y el servidor web) se aprovisionan y se gestionan mediante Ansible.</p>
+			
+			<p>En resumen la AF7 Tic Box nos proporciona todos los recursos necesarios para el funcionamiento completo de la infraestructura tecnológica del torneo en el preciso momento en el que se enciende y levantan todos los servicios.
+		
+            </div>
+        </div>
+    </div>
+    <!-- ./projects-detail -->
+ 
+ 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!--  plugins  -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+    <!--  main script  -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

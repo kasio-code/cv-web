@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kasio</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+    <!-- main style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+
+            <div class="preloader" aria-busy="true" aria-label="Cargando, por favor espere." role="progressbar">
+            </div>
+
+        </div>
+    </div>
+    <!-- ./Preloader -->
+    
+    <!-- header -->
+    <header class="navbar-fixed-top">
+        <nav>
+            <ul>
+                <li><a href="index.html#about">Acerca de mi</a></li>
+                <li><a href="index.html#experience">Experiencia</a></li>
+                <li><a href="index.html#education">Educaci&oacute;n</a></li>
+                <li><a href="index.html#skills">Habilidades</a></li>
+				<li><a href="index.html#projects">Proyectos</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ./header -->
+    
+    <!-- projects-detail -->
+
+    <div class="section" id="projects-detail">
+        <div class="container">
+            <div class="col-md-12" data-aos="fade-up">
+                <h1 class="size-50">Proyecto <br /> presentaciones</h1>
+                <div class="h-50"></div>
+				
+                <p>Dentro de mis hobbies se encuentra el diseño multimedia y más en detalle la edición de vídeo, de hecho he realizado un máster sobre esto porque es un mundo que me apasiona. Uno de los momentos en los que he podido desarrollar esta faceta es en la creación de vídeos para presentaciones de eventos. A continuación tienes un par de enlaces donde puedes ver un par de ejemplos de vídeos realizados por mi.</p>
+
+				<div style="text-align: center;">
+				<br /></div>
+
+				<header>
+						<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/8zLiLRFtwCA" width="560"></iframe>
+						<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/xUW3DPcpyyg" width="560"></iframe>
+						<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/jmyuY_KL33A" width="560"></iframe>
+						<p> </p>
+						<p><i>Con permiso de la asociación para mostrar los vídeos en esta web</i></p>
+						<p> </p>
+				</header>
+
+				<section style="text-align: center;"><br />
+				</section>
+				
+				<script>
+					// Find all YouTube videos
+					var $videosYoutube = $("iframe[src*='www.youtube.com']"),
+							// el padre contenedor
+							$v_container = $("body section");
+
+					// iteramos todos los videos de youtube y guardamos sus proporciones
+					$videosYoutube.each(function () {
+						$(this)
+								.attr('proportion', this.height / this.width)
+								//removemos las dimenciones del video
+								.removeAttr('height')
+								.removeAttr('width');
+
+					});
+
+					// Cuando se redimenciona la ventana
+					$(window).resize(function () {
+
+						var container_width = $v_container.width();
+
+						// Resize all videos according to their own aspect ratio
+						$videosYoutube.each(function () {
+
+							var $el = $(this);
+							$el
+									.width(container_width)
+									.height(container_width * $el.attr('proportion'));
+
+						});
+					}).resize(); // invocamos el método a la carga
+				</script>
+				
+            </div>
+        </div>
+    </div>
+    <!-- ./projects-detail -->
+ 
+ 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!--  plugins  -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+    <!--  main script  -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
